@@ -1,0 +1,371 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Navigation */
+.navbar {
+  padding: 0.9rem 0;
+  position: absolute;
+  width: 100%;
+  z-index: 1000;
+}
+.active {
+  color: #ff7214 !important;
+}
+
+.navbar-brand {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.nav-link:hover {
+  color: #ff7214 !important;
+}
+
+.nav-link {
+  color: #fff;
+  margin: 0 1rem;
+  font-weight: 500;
+}
+
+.navbar-toggler {
+  border: none;
+}
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+.navbar-toggler-icon {
+  color: #fff;
+}
+
+/* Hero Section */
+.hero-img {
+  background-image: url("../images/yol website pics-08.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+.hero-section {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section h1 {
+  font-size: 4.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  max-width: 800px;
+}
+.hero-text {
+  font-size: 1.2rem;
+  max-width: 400px;
+}
+.btn-primary {
+  background-color: transparent;
+  color: #fff;
+  border: none !important;
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  font-weight: 500;
+}
+.btn-primary:hover {
+  background-color: transparent;
+  color: #ff7214;
+  border: none;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: -1;
+}
+
+/* Fun Fact Section */
+.fun-fact-section {
+  padding: 5rem 0;
+}
+
+.fact-box {
+  background-color: #111;
+  padding: 2rem;
+  border-radius: 20px;
+}
+
+.fact-box h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.stats h3 {
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+
+/* Fix Video.js styling */
+.video-placeholder {
+  width: 100%;
+  padding: 20px 0;
+  border-radius: 20px;
+}
+
+.video-js {
+  width: 100% !important;
+  height: 0 !important;
+  padding-top: 56.25% !important; /* 16:9 Aspect Ratio */
+  border-radius: 20px;
+}
+
+.vjs-tech {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+
+.vjs-poster {
+  background-size: cover;
+  border-radius: 20px;
+}
+
+/* Make the control bar appear properly */
+.vjs-default-skin .vjs-control-bar {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Make sure play button shows above video */
+.vjs-big-play-centered .vjs-big-play-button {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.play-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: none;
+  color: #000;
+  font-size: 1.5rem;
+}
+
+/* Services Section */
+.services-section {
+  padding: 9rem 0;
+  background-image: url("../images/yol website pics-10.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.service-card {
+  background-color: #111;
+  border-radius: 15px;
+  padding: 1.5rem;
+  height: 100%;
+  min-height: 300px;
+}
+
+.service-img {
+  width: 100%;
+  height: 200px;
+  background-color: #222;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+.service-box1 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("../images/getty-images-MXQ2_iTtUm0-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.service-box2 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("../images/getty-images-2oD9OyOzAIQ-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.service-box3 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("../images/piotr-cichosz-NhRk-907Ayc-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.service-box4 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("../images/getty-images-D-1Q_d3yCBQ-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.service-box5 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("../images/daniel-korpai-pKRNxEguRgM-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.portfolio-section-container {
+  background-image: url("../images/yol website pics-09.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+
+/* Portfolio Section */
+.portfolio-section {
+  padding: 5rem 0;
+}
+
+.portfolio-img {
+  width: 100%;
+  height: 400px;
+  background-color: #222;
+  border-radius: 15px;
+}
+
+.splide__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 20px;
+  padding: 0 0.5em;
+}
+/* Fast Contact Section */
+.fast-contact-section {
+  padding: 5rem 0;
+}
+
+/* Footer */
+.footer {
+  background-color: #111;
+  padding: 5rem 0 2rem;
+}
+
+.footer h4 {
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer ul li {
+  margin-bottom: 0.8rem;
+  color: #999;
+}
+
+.social-icons {
+  margin-top: 1.5rem;
+  display: flex;
+}
+.social-icon-container {
+  margin-right: 2rem;
+  border: 1px solid #fff;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.social-icon-container:hover {
+  border: 1px solid #ff7214;
+}
+
+.footer-top-links li {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.footer-top-links li:hover {
+  color: #fff;
+}
+
+.social-icon {
+  color: #fff;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+.footer-bottom {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #222;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-links a {
+  color: #999;
+  text-decoration: none;
+  margin-left: 2rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 3.5rem;
+  }
+  .navbar-collapse {
+    backdrop-filter: blur(20px) !important;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-links {
+    margin-top: 1rem;
+  }
+
+  .footer-links a {
+    margin: 0 1rem;
+  }
+}
+
+/* Additional Splide Responsive Styles */
+.splide {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+@media (min-width: 1200px) {
+  .splide {
+    width: 85%; /* Makes the slider smaller on large screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .splide__slide img {
+    padding: 0 0.25em; /* Reduces the image padding on small screens */
+  }
+}
