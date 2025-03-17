@@ -159,5 +159,142 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
     <script src="assets/js/script.js"></script>
+    <style>
+      .custom-cursor {
+        position: fixed;
+        width: 65px;
+        height: 65px;
+        border-radius: 50%;
+        background-color: transparent !important;
+        pointer-events: none;
+        border: 2px solid #a8c2d0;
+        z-index: 9999;
+        transform: translate(-50%, -50%);
+        /* Remove transition to handle all animations in JS */
+      }
+      
+      .cursor-dot {
+        position: fixed;
+        width: 10px;
+        height: 10px;
+        background-color: #fff;
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 10000;
+        transform: translate(-50%, -50%);
+      }
+      
+      body,html {
+        cursor: none !important;
+      }
+      
+      a, button, .btn, .nav-link, .social-icon-container, .navbar-toggler {
+        cursor: none !important;
+      }
+    </style>
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Create cursor elements
+        const cursor = document.createElement('div');
+        cursor.classList.add('custom-cursor');
+        document.body.appendChild(cursor);
+        
+        const cursorDot = document.createElement('div');
+        cursorDot.classList.add('cursor-dot');
+        document.body.appendChild(cursorDot);
+        
+        // Initialize cursor position variables
+        let mouseX = 0, mouseY = 0;
+        let cursorX = 0, cursorY = 0;
+        let cursorWidth = 20, cursorHeight = 20;
+        let cursorColor = '#a8c2d0';
+        let isHovering = false;
+        
+        // Track mouse position
+        document.addEventListener('mousemove', function(e) {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+          
+          // The dot follows cursor exactly with no lerp
+          cursorDot.style.left = mouseX + 'px';
+          cursorDot.style.top = mouseY + 'px';
+        });
+        
+        // Animation loop for smooth cursor movement
+        function animateCursor() {
+          // Lerp calculation - smoother follow with adjustable speed
+          const speed = 0.15; // Adjust for faster/slower follow (0.1-0.3 is good)
+          
+          // Calculate new position with lerp
+          cursorX += (mouseX - cursorX) * speed;
+          cursorY += (mouseY - cursorY) * speed;
+          
+          // Apply position
+          cursor.style.left = cursorX + 'px';
+          cursor.style.top = cursorY + 'px';
+          
+          // Handle size and color lerping if hovering
+          if (isHovering) {
+            cursorWidth += (40 - cursorWidth) * speed;
+            cursorHeight += (40 - cursorHeight) * speed;
+          } else {
+            cursorWidth += (20 - cursorWidth) * speed;
+            cursorHeight += (20 - cursorHeight) * speed;
+          }
+          
+          // Apply size
+          cursor.style.width = cursorWidth + 'px';
+          cursor.style.height = cursorHeight + 'px';
+          
+          // Continue animation loop
+          requestAnimationFrame(animateCursor);
+        }
+        
+        // Start animation loop
+        animateCursor();
+        
+        // Add hover effect for interactive elements
+        const interactiveElements = document.querySelectorAll('a, button, .btn, .nav-link, .social-icon-container');
+        interactiveElements.forEach(el => {
+          el.addEventListener('mouseenter', () => {
+            isHovering = true;
+            cursor.style.backgroundColor = 'rgba(168, 194, 208, 0.5)';
+          });
+          
+          el.addEventListener('mouseleave', () => {
+            isHovering = false;
+            cursor.style.backgroundColor = '#a8c2d0';
+          });
+        });
+      });
+      
+      var splide = new Splide('.splide', {
+        padding: '9rem',
+        breakpoints: {
+          1200: {
+            // Large screens - slightly smaller than default
+            padding: '7rem',
+          },
+          992: {
+            // Medium screens
+            padding: '5rem',
+          },
+          768: {
+            // Small screens (tablets)
+            padding: '3rem',
+          },
+          576: {
+            // Extra small screens (phones)
+            padding: '1.5rem',
+          }
+        },
+        // start position
+        start: 1,
+      });
+
+      splide.mount();
+    </script>
+
   </body>
 </html>

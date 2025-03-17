@@ -11,6 +11,10 @@ body {
   color: #fff;
 }
 
+/* Custom cursor styles */
+html {
+  cursor: url("../images/cursor.png"), auto;
+}
 /* Navigation */
 .navbar {
   padding: 0.9rem 0;
@@ -19,7 +23,7 @@ body {
   z-index: 1000;
 }
 .active {
-  color: #ff7214 !important;
+  color: #a8c2d0 !important;
 }
 
 .navbar-brand {
@@ -27,7 +31,7 @@ body {
   font-weight: 700;
 }
 .nav-link:hover {
-  color: #ff7214 !important;
+  color: #a8c2d0 !important;
 }
 
 .nav-link {
@@ -81,7 +85,7 @@ body {
 }
 .btn-primary:hover {
   background-color: transparent;
-  color: #ff7214;
+  color: #a8c2d0;
   border: none;
 }
 
@@ -311,7 +315,7 @@ body {
   justify-content: center;
 }
 .social-icon-container:hover {
-  border: 1px solid #ff7214;
+  border: 1px solid #a8c2d0;
 }
 
 .footer-top-links li {
@@ -489,7 +493,6 @@ body {
   margin-top: 10px;
 }
 
-
 .cta-link:hover {
   color: #fff;
 }
@@ -499,7 +502,7 @@ body {
   background-position: center top -150px;
   background-repeat: no-repeat;
 }
-.about-container{
+.about-container {
   margin-top: 150px;
 }
 
@@ -597,8 +600,8 @@ body {
 }
 
 .service-card-1 {
-background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-  url("../images/getty-images-MXQ2_iTtUm0-unsplash.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("../images/getty-images-MXQ2_iTtUm0-unsplash.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -613,23 +616,26 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
   background-position: center top -250px;
   background-repeat: no-repeat;
 }
-.service-container{
+.service-container {
   margin-top: 150px;
 }
- 
+
 /* industries Section */
 .industries-grid {
   padding: 50px 0;
 }
 
 .industry-card {
-  background: rgb(18,18,18);
-  background: linear-gradient(90deg, rgba(18,18,18,1) 0%, rgba(54,53,54,1) 100%);
+  background: rgb(18, 18, 18);
+  background: linear-gradient(
+    90deg,
+    rgba(18, 18, 18, 1) 0%,
+    rgba(54, 53, 54, 1) 100%
+  );
   border-radius: 15px;
   padding: 25px;
   height: 100%;
   margin-bottom: 30px;
-  
 }
 
 .card-header {
