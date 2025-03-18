@@ -43,4 +43,85 @@ document.addEventListener("DOMContentLoaded", function () {
       height: "auto",
     });
   }
+
+  // Only initialize custom cursor for screens larger than 1024px
+  if (window.innerWidth >= 1024) {
+    // Create cursor elements
+    const cursor = document.createElement("div");
+    cursor.classList.add("custom-cursor");
+    document.body.appendChild(cursor);
+
+    const cursorDot = document.createElement("div");
+    cursorDot.classList.add("cursor-dot");
+    document.body.appendChild(cursorDot);
+
+    // Initialize cursor position variables
+    let mouseX = 0,
+      mouseY = 0;
+    let cursorX = 0,
+      cursorY = 0;
+    let dotX = 0,
+      dotY = 0;
+    let isHovering = false;
+
+    // Track mouse position
+    document.addEventListener("mousemove", function (e) {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+
+    // Animation loop for smooth cursor movement
+    function animateCursor() {
+      const cursorSpeed = 0.15;
+      const dotSpeed = 0.35;
+
+      cursorX += (mouseX - cursorX) * cursorSpeed;
+      cursorY += (mouseY - cursorY) * cursorSpeed;
+
+      dotX += (mouseX - dotX) * dotSpeed;
+      dotY += (mouseY - dotY) * dotSpeed;
+
+      cursor.style.left = Math.round(cursorX) + "px";
+      cursor.style.top = Math.round(cursorY) + "px";
+
+      cursorDot.style.left = Math.round(dotX) + "px";
+      cursorDot.style.top = Math.round(dotY) + "px";
+
+      requestAnimationFrame(animateCursor);
+    }
+
+    // Start animation loop
+    animateCursor();
+
+    // Add hover effect for interactive elements
+    const interactiveElements = document.querySelectorAll(
+      "a, button, .btn, .nav-link, .social-icon-container"
+    );
+    interactiveElements.forEach((el) => {
+      el.addEventListener("mouseenter", () => {
+        cursor.style.width = "40px";
+        cursor.style.height = "40px";
+        cursor.style.backgroundColor = "rgba(168, 194, 208, 0.5)";
+        cursorDot.style.backgroundColor = "#fff";
+      });
+
+      el.addEventListener("mouseleave", () => {
+        cursor.style.width = "30px !important";
+        cursor.style.height = "30px !important";
+        cursor.style.backgroundColor = "transparent";
+        cursorDot.style.backgroundColor = "#a8c2d0";
+      });
+    });
+
+    // Handle cursor disappearing when leaving the window
+    document.addEventListener("mouseleave", () => {
+      cursor.style.opacity = 0;
+      cursorDot.style.opacity = 0;
+    });
+
+    document.addEventListener("mouseenter", () => {
+      cursor.style.opacity = 1;
+      cursorDot.style.opacity = 1;
+    });
+  }
 });

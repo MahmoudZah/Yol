@@ -13,9 +13,53 @@ body {
 }
 
 /* Custom cursor styles */
-html {
-  cursor: url("../images/cursor.png"), auto;
+@media (min-width: 1024px) {
+  .custom-cursor {
+    position: fixed;
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 50%;
+    background-color: transparent !important;
+    pointer-events: none;
+    border: 2px solid #a8c2d0;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s;
+  }
+
+  .cursor-dot {
+    position: fixed;
+    width: 6px;
+    height: 6px;
+    background-color: #a8c2d0;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10000;
+    transform: translate(-50%, -50%);
+    transition: background-color 0.3s;
+  }
 }
+
+/* Reset cursor for mobile/tablet */
+@media (max-width: 1023px) {
+  * {
+    cursor: auto !important;
+  }
+
+  a,
+  button,
+  .btn,
+  .nav-link,
+  .social-icon-container {
+    cursor: pointer !important;
+  }
+
+  .custom-cursor,
+  .cursor-dot {
+    display: none !important;
+  }
+}
+
 /* Navigation */
 .navbar {
   padding: 0.9rem 0;
