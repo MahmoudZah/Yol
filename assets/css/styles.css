@@ -791,3 +791,30 @@ textarea.form-control {
 .btn-send:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
+
+.splide__pagination {
+  bottom: -2.5em !important;
+}
+.splide__pagination__page {
+  height: 10px !important;
+  width: 10px !important;
+}
+
+.portfolio-item {
+  transition: 0.5s;
+}
+.portfolio-item:hover {
+  transform: scale(1.05);
+}
+.service-card {
+  transition: 0.5s;
+}
+.service-card:hover {
+  transform: scale(1.05);
+}
+.industry-card {
+  transition: 0.5s;
+}
+.industry-card:hover {
+  transform: scale(1.05);
+}
